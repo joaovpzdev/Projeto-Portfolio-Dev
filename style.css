@@ -29,6 +29,11 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    margin-top: 70px; /* Compensar navbar fixa */
+    flex: 1;
+}
+
 
  /* NAVBAR */
 .navbar {
@@ -269,8 +274,9 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    width: 100%;
 }
 
 .project-card {
@@ -302,6 +308,7 @@ body {
     color: var(--accent-color);
     font-size: 1.6rem;
     margin-bottom: 0.4rem;
+    flex-shrink: 0; /* Previne encolhimento */
 }
 
 .project-card h3 {
@@ -325,6 +332,17 @@ body {
 /* =========================================
    RESPONSIVIDADE
    ========================================= */
+
+
+@media (max-width: 968px) {
+    main {
+        margin-top: 60px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
 @media (max-width: 968px) {
     .hero-container {
         flex-direction: column-reverse;
